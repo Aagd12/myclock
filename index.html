@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anlogedigitalwatch</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h1>World Clock</h1>
+        </center>
+        <div class="clock">
+
+            <div class="hr" id="hr">
+
+            </div>
+            <div class="min" id="min">
+
+            </div>
+            <div class="sec" id="sec">
+
+            </div>
+            <div class="date" id="date">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hour = document.getElementById("hr");
+        const minute = document.getElementById("min");
+        const second = document.getElementById("sec");
+        const dat = document.getElementById("date");
+
+
+
+        setInterval(() => {
+            let date = new Date();
+            let h = date.getHours() * 30;
+            let m = date.getMinutes() * 6;
+            let s = date.getSeconds() * 6;
+            dat.innerHTML = date;
+
+            hour.style.transform = `rotateZ(${(h)+(m/12)}deg) `;
+            minute.style.transform = `rotateZ(${m}deg) `;
+            second.style.transform = `rotateZ(${s}deg) `;
+
+
+
+        });
+    </script>
+</body>
+
+</html>
